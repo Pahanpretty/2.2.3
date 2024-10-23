@@ -1,4 +1,4 @@
-package model;
+package web.model;
 
 public class Car {
 
@@ -8,6 +8,7 @@ public class Car {
 
     public Car() {
     }
+
 
     public Car(int id, String model, int year) {
 
@@ -46,7 +47,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "model='" + model + '\'' +
+                "web.model='" + model + '\'' +
                 ", year=" + year +
                 ", id=" + id +
                 '}';
