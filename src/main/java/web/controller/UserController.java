@@ -54,6 +54,7 @@ public class UserController {
 		return "editUser";
 	}
 
+
 	@PostMapping(value = "users/edit")
 	public String edit(@ModelAttribute("user") User user) {
 		userService.editUser(user);
