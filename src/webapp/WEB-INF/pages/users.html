@@ -22,7 +22,7 @@
             <td th:text="${user.getLastName()}">Фамилия</td>
 
             <td>
-                <form th:action="@{/users/edit(id=${user.id})}" th:object="${user}">
+                <form th:action="@{/users/edit/{id}(id=${user.id})}" th:object="${user}">
                     <button type="submit">Изменить</button>
                 </form>
             </td>

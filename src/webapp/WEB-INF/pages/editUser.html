@@ -8,8 +8,8 @@
 <h2>Изменить пользователя</h2>
 <div>
 
-    <form action="#" th:action="@{/users/edit}" th:object="${user}" method="post">
-        <input type="hidden" th:field="*{id}"/>
+    <form th:action="@{/users/edit}" th:object="${user}" method="post">
+        <input type="hidden" name="id" th:value="${user.getId()}">
         <fieldset>
             <legend>Данные пользователя</legend>
             <p>
@@ -20,7 +20,6 @@
                 <label th:for="lastName">Фамилия</label>
                 <input type="text" name="lastName" th:id="lastName" th:value="${user.getLastName()}"><br/>
             </p>
-
 
 
         </fieldset>
