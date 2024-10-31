@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о пользователе</title>
+</head>
+<body>
+<h1>Информация о пользователе</h1>
+
+<div>
+    <h2>Детали пользователя</h2>
+    <p><strong>Id:</strong> <span th:text="${user.id}"></span></p>
+    <p><strong>Имя:</strong> <span th:text="${user.name}"></span></p>
+    <p><strong>Фамилия:</strong> <span th:text="${user.lastName}"></span></p>
+</div>
+
+<div>
+    <a href="#" th:href="@{/users}">Вернуться к списку пользователей</a>
+    <a href="#" th:href="@{/users/edit/{id}(id=${user.id})}">Редактировать пользователя</a>
+    <a href="#" th:href="@{/users/delete(id=${user.id})}" onclick="return confirm('Вы уверены, что хотите удалить этого пользователя?');">Удалить пользователя</a>
+</div>
+
+</body>
+</html>
