@@ -10,7 +10,6 @@ import web.userDAO.UserDAO;
 import java.util.List;
 
 @Service
-@Transactional
 public class UsersService implements UserService{
 
     private UserDAO userDAO;
@@ -20,16 +19,18 @@ public class UsersService implements UserService{
         this.userDAO = userDAO;
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
         userDAO.addUser(user);
     }
 
+    @Transactional
     @Override
     public void deleteUser(Long id) {
         userDAO.deleteUser(id);
     }
-
+    @Transactional
     @Override
     public void editUser(User user) {
         userDAO.editUser(user);

@@ -13,18 +13,15 @@ public class UsersDAO implements UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    protected EntityManager getEntityManager() {
-        return this.entityManager;
-    }
 
     @Override
     public void addUser(User user) {
-        getEntityManager().persist(user);
+        entityManager.persist(user);
     }
 
     @Override
     public void deleteUser(Long id) {
-        getEntityManager()
+        entityManager
                 .createQuery("delete from User where id=: id")
                 .setParameter("id", id)
                 .executeUpdate();
@@ -32,17 +29,17 @@ public class UsersDAO implements UserDAO {
 
     @Override
     public void editUser(User user) {
-        getEntityManager().merge(user);
+        entityManager.merge(user);
     }
 
     @Override
     public User getUserById(Long id) {
-        return getEntityManager().find(User.class, id);
+        return entityManager.find(User.class, id);
     }
 
     @Override
     public List<User> getAllUsers() {
-        return getEntityManager().createQuery("From User").getResultList();
+        return entityManager.createQuery("From User").getResultList();
     }
 }
 
